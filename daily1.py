@@ -2,7 +2,7 @@
 #-----------------------------
 #Data Structures
 #List - ordered collection of items, mutable : [square ]
-list1 = [1,2,3,4,5,'a','Dhiraj',"Upadhyaya",True]  #list type of object with data
+list1 = [1,2,3,4,5,'a','Aditya',"Sandala",True]  #list type of object with data
 list1  #print when through spyder
 type(list1)  #type of object
 print(list1)  #print when running complete file
@@ -48,9 +48,11 @@ set2
 set3 = {'Australia', 'South Africa', 'INDIA'}
 set3
 sorted(set3)
-set2.union(set3) #set2 | set3
+set4 = set2.union(set3) #set2 | set3
 #A.intersection(B)
 set2.intersection(set3) #set2 & set
+
+set4
 
 type(set2)
 print(set2)
@@ -59,6 +61,7 @@ print(set2)
 str1 = 'Python Programming'
 type(str1)
 print(str1)
+len(str1)
 str2="Yash"
 str2.lower()
 dict?
@@ -71,7 +74,22 @@ for i in list1:
     print(i)
   
 for i in list1:    print(i)
+for i in list1: 
+    print(i)
+    print(i)
+
 for i in list1:    print('Dhiraj ', i + 6)
+list2
+list3 = [1,2,3,4,5,6]
+for i in list3:    print('Dhiraj ', i + 6)
+
+list3[5]
+list3[0]
+
+list4 =['aditya', 'bad', 'child', 'delhi']
+
+for (i) in list4: print(i)
+
 
 tuple1
 list5 = ['a',1]
@@ -115,10 +133,38 @@ namez
 #numpy - array - same data type
 import numpy
 numpy.array([10,20])
+numpy.array([11,21])
 
 import numpy as np #np is alias
+
+dir(np)
+
 np1 = np.arange(1,10)
+np1
+
+np2 = np.arange(50,999)
+np2
+np2.sum()
+np2.mean()
+
+
+np5 = np.arange(1,1000)
+np5
+
 x=np.arange(start=1,stop=1000000,step=2)
+x
+len(x)
+
+
+x2=np.arange(start=0,stop=1000000,step=5)
+x2
+len(x)
+
+x[50]
+
+x.shape
+
+
 len(x)
 x[1:100]
 x[1:50:10]
@@ -183,6 +229,10 @@ import statsmodels.api as sm
 #https://vincentarelbundock.github.io/Rdatasets/datasets.html
 mtcars = sm.datasets.get_rdataset(dataname='mtcars', package= 'datasets')
 mtcars.data.head()
+mtcars.data.tail()
+dir(mtcars)
+len(mtcars)
+
 
 #%%
 #Load from Excel/ CSV and export to
@@ -191,6 +241,10 @@ data.head(6)
 type(data)
 data.to_csv('mtcars.csv')
 data.to_excel('mtcarsExcel.xlsx','sheet3', header=False)
+data.to_excel('mtcarsExcel1.xlsx','sheet3', header=True)
+
+mtcars.data.columns
+
 
 #writing to multiple sheets
 writer = pd.ExcelWriter('test.xlsx', engine='xlsxwriter')
