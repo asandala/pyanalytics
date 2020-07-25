@@ -2,7 +2,7 @@
 """
 Created on Tue Jul 21 13:39:31 2020
 
-@author: adity
+@author: aditya sandala
 """
 
 # DENCO Case Study
@@ -55,6 +55,11 @@ import pandas as pd
 # Import the Denco Case Data CSV file
 data = pd.read_csv('denco.csv')
 print(data)
+
+data.columns
+data.dtypes
+
+len(data)
 
 # Data sorted by total number of customer transactions
 cust_trans = data[['custname','revenue']]
