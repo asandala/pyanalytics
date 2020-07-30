@@ -6,15 +6,25 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+help(np)
+
 
 #S2 - data
+
 x = np.array([5,15,25,35,45,55]).reshape((-1,1))  #making 2 dim
 x  #IV
+x.shape
 y = np.array([5,20,14,32,22, 38])  #1 dim
 y #DV #(y can 2 dim also : y.reshape((-1,1)))
+y.shape
+x.ndim
+y.ndim
 
 #S3 - Model
 model = LinearRegression()  #create blank model
+type(model)
+print(model)
+
 #other options- fit_intercept (y/N), normalise i/p var
 model.fit(x,y)  #find optimal values of weights b0, b1 using x & y, .fit() fits the model
 
@@ -23,6 +33,8 @@ model = LinearRegression().fit(x,y) #another way  #2 lines into 1
 #S4 - Results
 r_sq = model.score(x, y)
 r_sq #coeff of determination : > .6 is good
+# 71% of variations of y are explained in X
+
 model.intercept_  #bo
 model.coef_  #b1
 y = 5.6 + .54 * x  #mathematical equation

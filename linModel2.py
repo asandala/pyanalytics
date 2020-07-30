@@ -14,6 +14,7 @@ url ='https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/medi
 media = pd.DataFrame(pd.read_csv(url))
 
 media.head()
+media.columns
 
 #check duplicates
 sum(media.duplicated(subset = 'Date')) == 0
