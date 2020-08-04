@@ -16,6 +16,8 @@ plt.scatter(X[:,0],X[:,1], label='True Position')
 for label, x, y in zip(labels, X[:, 0], X[:, 1]):
     plt.annotate(  label,   xy=(x, y), xytext=(-3, 3), textcoords='offset points', ha='right', va='bottom')
 plt.show()
+
+
 #draws the data points in the X numpy array and label data points from 1 to 10.
 #It can be seen from the naked eye that the data points form two clusters: first at the bottom left consisting of points 1-5 while second at the top right consisting of points 6-10.
 #However, in the real world, we may have thousands of data points in many more than 2 dimensions. In that case it would not be possible to spot clusters with the naked eye. This is why clustering algorithms have been developed.
@@ -56,7 +58,7 @@ cluster = AgglomerativeClustering(n_clusters=2, affinity='euclidean', linkage='w
 #n the code above we import the AgglomerativeClustering class from the "sklearn.cluster" library. The number of parameters is set to 2 using the n_clusters parameter while the affinity is set to "euclidean" (distance between the datapoints). Finally linkage parameter is set to "ward", which minimizes the variant between the clusters.
 
 cluster.fit_predict(X)
-
+X
 #Next we call the fit_predict method from the AgglomerativeClustering class variable cluster. This method returns the names of the clusters that each data point belongs to. Execute the following script to see how the data points have been clustered.
 
 print(cluster.labels_)
@@ -96,6 +98,7 @@ customer_data.columns
 #rename columns
 customer_data.columns = ['customerID', 'genre', 'age', 'income', 'spendscore']
 customer_data.head()
+customer_data
 #Our dataset has five columns: CustomerID, Genre, Age, Annual Income, and Spending Score. To view the results in two-dimensional feature space, we will retain only two of these five columns. We can remove CustomerID column, Genre, and Age column. We will retain the Annual Income (in thousands of dollars) and Spending Score (1-100) columns. The Spending Score column signifies how often a person spends money in a mall on a scale of 1 to 100 with 100 being the highest spender. 
 
 data = customer_data.iloc[:, 3:5].values

@@ -33,6 +33,7 @@ data.dtypes
 data.isnull().any()
 data.isnull().any(axis=1)
 data.index[data.isnull().any(axis=1)]
+data.index[data.isnull().any(axis=0)]
 data.iloc[6]  #see the null values
 data.isnull().sum().sum()  #75 missing values 
 data.isnull().sum(axis=0)  #columns missing
@@ -47,6 +48,8 @@ data2.head()
 from sklearn.preprocessing import StandardScaler
 scalar = StandardScaler()
 data2_scaled = scalar.fit_transform(data2)
+type(data2_scaled)
+dir(data2_scaled)
 
 data2_scaled.describe() #it converts to different format
 pd.DataFrame(data2_scaled).describe()
