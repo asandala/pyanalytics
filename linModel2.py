@@ -34,7 +34,7 @@ media.isnull().sum()  #each col
 
 #outlier analysis
 media.dtypes
-fig, axs = plt.subplots(2,2, figsize = (10,5))
+fig, axs = plt.subplots(3,1, figsize = (10,30))
 plt1 = sns.boxplot(media['Views_show'], ax = axs[0,0])
 plt1 = sns.boxplot(media['Visitors'], ax = axs[0,1])
 plt1 = sns.boxplot(media['Views_platform'], ax = axs[1,0])

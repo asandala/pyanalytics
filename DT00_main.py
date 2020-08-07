@@ -11,7 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import os
-os.listdir('E:/analytics/projects/pyanalytics/data') #change the folder to see what are the file in folder
+os.listdir('C:/analytics/projects/pyanalytics') #change the folder to see what are the file in folder
 #dataset
 #data = pd.read_csv('E:/analytics/projects/pyanalytics/data/bill_authentication.csv')
 data = pd.read_csv('https://raw.githubusercontent.com/DUanalytics/pyAnalytics/master/data/bill_authentication.csv')
@@ -24,20 +24,27 @@ y= data['Class']
 X
 y
 y.value_counts()
+
 #split data
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.20)
 X_train.shape
 X_test.shape
+y_train.shape
+y_test.shape
+
 275/data.shape[0]
+X_test.shape[0]/data.shape[0]
 
 #model
 from sklearn.tree import DecisionTreeClassifier
 clsModel = DecisionTreeClassifier()  #model with parameter
 clsModel.fit(X_train, y_train)
+y_train.value_counts()
 
 #predict
 ypred1 = clsModel.predict(X_test)
+ypred1
 len(ypred1)
 
 #metrics
@@ -50,6 +57,17 @@ accuracy_score(y_true=y_test, y_pred=ypred1)
 newData = X.sample(4)
 clsModel.predict(newData)
 
+# Steps performed in Decision Tree Problems
+# a. Import the libraries
+# b. Import the data and classify them into dependent and indpeenedent variable
+# c. Split the data into training and test data
+# d. Construct the model on training data
+# e. Predict on the test data
+# f. Check the accuracy of the model with classification report and confusion matrix
+# g. predict on unknown sample data (for which we dont know the results)
+# h. Visualize
+
+
 #visualise 
 #pip install graphviz
 from graphviz import Source
@@ -57,7 +75,7 @@ from sklearn import tree
 tree.plot_tree(decision_tree=clsModel)
 tree.plot_tree(decision_tree=clsModel, feature_names=['Var', 'Skew', ' Kur',  'Ent'], class_names=['Org','Fake'], fontsize=12)
 #not a good way to draw graphs.. other methods to be experimented
-tree.plot_tree(decision_tree=clsModel, max_depth=2, feature_names=['Var', 'Skew', ' Kur',  'Ent'], class_names=['Org','Fake'], fontsize=12)
+tree.plot_tree(decision_tree=clsModel, max_depth=2, feature_names=['Var', 'Skew', ' Kur',  'Ent'], class_names=['Org1','Fake1'], fontsize=12)
 
 Source(tree.export_graphviz(clsModel))
 Source(tree.export_graphviz(clsModel, max_depth=3))

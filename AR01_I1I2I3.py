@@ -4,6 +4,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+#pip install mlxtend
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori
 from mlxtend.frequent_patterns import association_rules
@@ -96,8 +97,9 @@ frequent_itemsets[ (frequent_itemsets['length'] == 2) & (frequent_itemsets[ 'sup
 
 #%%%%
 #### Part - 3 
+#pip install efficient_apriori
 from efficient_apriori import apriori
-#install efficient_apriori
+
 #https://pypi.org/project/efficient-apriori/
 itemsets2, rules2 = apriori(df, min_support=0.2, min_confidence = .4)
 itemsets2

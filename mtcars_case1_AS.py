@@ -11,7 +11,7 @@ Created on Tue Aug  4 23:35:49 2020
 
 #Download data
 import statsmodels.api as sm
-import pandas as pd
+
 #https://vincentarelbundock.github.io/Rdatasets/datasets.html
 dataset_mtcars = sm.datasets.get_rdataset(dataname='mtcars', package='datasets')
 dataset_mtcars.data.head()

@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import pandas as pd 
 
 #data
+#pip install pydataset
 from pydataset import data
 mtcars = data('mtcars')
 mtcars.head()
@@ -49,7 +50,7 @@ y2 = df['am'].values  #s
 y2
 
 ## Fitting Random Forest Regression to the dataset 
-# import the regressor 
+# import the classifier
 from sklearn.ensemble import RandomForestClassifier 
   
  # create classifier object 
@@ -69,6 +70,7 @@ confusion_matrix(y2, classifier.predict(X2))
 df[['wt','hp']].head()
 newData = np.array([2.7, 120]).reshape(1, 2)
 newData
+
 ypred2 = classifier.predict(newData)  # test the output by changing values 
 ypred2
 
